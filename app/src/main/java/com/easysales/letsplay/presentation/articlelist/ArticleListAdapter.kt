@@ -3,10 +3,12 @@ package com.easysales.letsplay.presentation.articlelist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.easysales.letsplay.R
 import com.easysales.letsplay.data.exception.AppException
 import com.easysales.letsplay.presentation.core.BaseViewHolder
+import com.easysales.letsplay.utils.ImageUtils
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import io.reactivex.Observable
@@ -37,7 +39,15 @@ class ArticleListAdapter : RecyclerView.Adapter<VH>() {
             .setText(R.id.tvLikesCount, item.likes)
             .addOnClickListener(R.id.container_item) { itemClicksSubject.onNext(ArticleClickEvent(item.id)) }
 
+        var previewImage = holder.itemView.findViewById<ImageView>(R.id.ivImage);
+        if(item.imageUrl != null) {
+            ImageUtils.load(holder.itemView.context, previewImage, item.imageUrl, R.drawable.loader)
+        } else {
+            previewImage.setImageDrawable(holder.context.getDrawable(R.drawable.image_game));
+        }
+
         val categories = holder.itemView.findViewById<ChipGroup>(R.id.cgCategories)
+        categories.removeAllViews();
         for(category in item.categories) {
             val chipCategory = Chip(holder.itemView.context)
             chipCategory.text = category

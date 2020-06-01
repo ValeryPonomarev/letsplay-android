@@ -10,11 +10,12 @@ interface MainContract {
         fun showHelpView()
         fun showArticlesView()
         fun showArticleView(articleId: String)
+        fun sendLogs()
 
         var navigationClicks: Observable<NavigationItem>
     }
 }
 
 enum class NavigationItem {
-    GAMES, HELP, FAVORITES
+    GAMES, HELP, FAVORITES, LOGS
 }

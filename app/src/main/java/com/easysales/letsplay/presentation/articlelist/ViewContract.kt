@@ -8,6 +8,7 @@ data class ArticleItemDto(
     val id: String,
     val title: String,
     val description: String,
+    val imageUrl: String?,
     val likes: String,
     val categories: List<String>
 )
@@ -21,5 +22,5 @@ data class ArticleClickEvent(
 ) : ClickEvent
 
 fun Article.toViewDto(): ArticleItemDto {
-    return ArticleItemDto(this.id, this.title, this.description, this.likes.toString(), this.categories.map { it.name })
+    return ArticleItemDto(this.id, this.title, this.description, this.imageUrl, this.likes.toString(), this.categories.map { it.name })
 }

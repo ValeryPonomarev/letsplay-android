@@ -42,6 +42,7 @@
     <string name="navigation_title_games">ИГРЫ</string>
     <string name="navigation_title_favorite">ИЗБРАННОЕ</string>
     <string name="navigation_title_help">ПОМОЩЬ</string>
+    <string name="navigation_title_logs">ЛОГИ</string>
 
     <!--articles-->
     <string name="error_article_notFound">Статья не найдена</string>

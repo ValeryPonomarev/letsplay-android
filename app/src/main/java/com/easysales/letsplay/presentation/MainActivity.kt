@@ -55,6 +55,10 @@ class MainActivity : BaseMvpActivity<MainPresenter, MainContract.View>(), MainCo
                     navigationSubject.onNext(NavigationItem.HELP)
                     return@OnNavigationItemSelectedListener true
                 }
+                R.id.navigation_logs -> {
+                    navigationSubject.onNext(NavigationItem.LOGS)
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         })
@@ -96,6 +100,9 @@ class MainActivity : BaseMvpActivity<MainPresenter, MainContract.View>(), MainCo
     override fun showHelpView() = showFragment(HelpFragment(), false)
     override fun showArticlesView() = showFragment(ArticleListFragment(), false)
     override fun showArticleView(articleId: String) = showFragment(ArticleFragment.newInstance(Args(articleId)), true)
+    override fun sendLogs() {
+        LogUtils.sendLogs(this, LogUtils.EmailSettings("", "", "", "Отправить логи"))
+    }
 
     //region permissions
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {

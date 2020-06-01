@@ -18,13 +18,14 @@ open class StorageModule(private val context: Context) {
     @Provides @Singleton open fun provideDbLocalStorage(): Database =
         Room
             .databaseBuilder(context, Database::class.java, Database.APP_DB_NAME)
+            .createFromAsset("app.db")
             .addCallback(object: RoomDatabase.Callback() {
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
                     LogUtils.iFile(LogUtils.LOG_DATA, "populate database")
 //                    db.execSQL("delete from goodCancellationReason;")
 //                    db.execSQL("insert into goodCancellationReason(id, title) values \n" +
-//                            "('1', 'Брак'),\n" +
+//                            "('1', 'БFрак'),\n" +
 //                            "('2', 'Отказ');")
                 }
             })

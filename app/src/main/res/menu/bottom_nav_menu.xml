@@ -15,4 +15,9 @@
             android:id="@+id/navigation_help"
             android:icon="@drawable/ic_help"
             android:title="@string/navigation_title_help"/>
+
+    <item
+        android:id="@+id/navigation_logs"
+        android:icon="@drawable/ic_storage"
+        android:title="@string/navigation_title_logs"/>
 </menu>

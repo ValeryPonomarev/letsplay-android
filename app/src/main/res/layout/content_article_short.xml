@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/container_item"
-              style="@style/App.Block"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginBottom="@dimen/margin_base"
-              android:padding="@dimen/padding_base"
-              android:orientation="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_item"
+    style="@style/App.Block"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_base"
+    android:padding="@dimen/padding_base">
 
     <TextView
         android:id="@+id/tvTitle"
         style="@style/App.Text.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:textStyle="bold"
         android:textAllCaps="true"
         android:text="@string/test_title"/>
@@ -22,8 +25,12 @@
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         android:layout_marginTop="@dimen/margin_base"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
         android:src="@drawable/image_game" />
 
     <TextView
@@ -31,6 +38,9 @@
         style="@style/App.Text.Subtitle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivImage"
         android:layout_marginTop="@dimen/margin_base"
         android:ellipsize="end"
         android:maxLines="2"
@@ -41,31 +51,31 @@
         android:theme="@style/Theme.MaterialComponents.Light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
         android:layout_marginTop="@dimen/margin_base">
     </com.google.android.material.chip.ChipGroup>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <View
+        android:id="@+id/vClose"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cgCategories"
+        android:background="@drawable/ic_favorite_border"
+        />
+
+    <TextView
+        android:id="@+id/tvLikesCount"
+        style="@style/App.Text.Subtitle1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_base"
-        android:layout_gravity="center_vertical">
+        android:layout_marginStart="@dimen/margin_base"
+        app:layout_constraintLeft_toRightOf="@id/vClose"
+        app:layout_constraintTop_toTopOf="@id/vClose"
+        app:layout_constraintBottom_toBottomOf="@id/vClose"
+        android:paddingStart="@dimen/padding_base"
+        android:text="@string/test_number"/>
 
-        <View
-            android:id="@+id/vClose"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/ic_favorite_border"
-            />
-
-<!--TODO ICON-->
-        <TextView
-            android:id="@+id/tvLikesCount"
-            style="@style/App.Text.Subtitle1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/padding_base"
-            android:text="@string/test_number"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

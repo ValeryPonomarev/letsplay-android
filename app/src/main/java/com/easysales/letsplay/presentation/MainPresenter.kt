@@ -3,6 +3,7 @@ package com.easysales.letsplay.presentation
 import com.easysales.letsplay.domain.CommonService
 import com.easysales.letsplay.infrastructure.App
 import com.easysales.letsplay.presentation.core.BasePresenter
+import com.easysales.letsplay.utils.LogUtils
 import com.easysales.letsplay.utils.Settings
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -29,6 +30,7 @@ class MainPresenter() : BasePresenter<MainContract.View>() {
                     NavigationItem.FAVORITES -> getView().showFavoriteView()
                     NavigationItem.HELP -> getView().showHelpView()
                     NavigationItem.GAMES -> getView().showArticlesView()
+                    NavigationItem.LOGS -> getView().sendLogs()
                 }
             }}
             .doOnError { processException(it) }.retry()

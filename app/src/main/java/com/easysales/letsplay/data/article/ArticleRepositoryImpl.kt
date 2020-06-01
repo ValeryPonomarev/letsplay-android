@@ -57,38 +57,39 @@ class ArticleRepositoryImpl @Inject constructor(
     }
 
     override fun reload(): Completable {
-        return getHttpClient().getArticles()
-            .flatMapCompletable { data: List<ArticleResponse> ->
-
-                val articles = ArrayList<Article>(data.size)
-                val categories = HashMap<Long, Category>()
-                val articleCategories = ArrayList<ArticleCategory>()
-
-                data.forEach { articleResponse ->
-                    val article = articleResponse.toDb()
-                    articles.add(article)
-
-                    articleResponse.categories.forEach { categoryResponse ->
-                        val category = categories.getOrPut(
-                            categoryResponse.apiId,
-                            { categoryResponse.toDb() }
-                        )
-
-                        val articleCategory = ArticleCategory(article.id, category.id)
-                        articleCategories.add(articleCategory)
-                    }
-                }
-
-                return@flatMapCompletable Completable.fromCallable {
-                    database.categoryDao().deleteAll()
-                    database.categoryDao().insertAll(categories.values)
-                    database.articleDao().deleteAll()
-                    database.articleDao().insertAll(articles)
-                    database.articleCategoryDao().deleteAll()
-                    database.articleCategoryDao().insertAll(articleCategories)
-                }
-            }
-            .subscribeOn(schedulerProvider.io())
+        return Completable.complete()
+//        return getHttpClient().getArticles()
+//            .flatMapCompletable { data: List<ArticleResponse> ->
+//
+//                val articles = ArrayList<Article>(data.size)
+//                val categories = HashMap<Long, Category>()
+//                val articleCategories = ArrayList<ArticleCategory>()
+//
+//                data.forEach { articleResponse ->
+//                    val article = articleResponse.toDb()
+//                    articles.add(article)
+//
+//                    articleResponse.categories.forEach { categoryResponse ->
+//                        val category = categories.getOrPut(
+//                            categoryResponse.apiId,
+//                            { categoryResponse.toDb() }
+//                        )
+//
+//                        val articleCategory = ArticleCategory(article.id, category.id)
+//                        articleCategories.add(articleCategory)
+//                    }
+//                }
+//
+//                return@flatMapCompletable Completable.fromCallable {
+//                    database.categoryDao().deleteAll()
+//                    database.categoryDao().insertAll(categories.values)
+//                    database.articleDao().deleteAll()
+//                    database.articleDao().insertAll(articles)
+//                    database.articleCategoryDao().deleteAll()
+//                    database.articleCategoryDao().insertAll(articleCategories)
+//                }
+//            }
+//            .subscribeOn(schedulerProvider.io())
     }
 
     override fun addToFavorite(article: com.easysales.letsplay.domain.article.Article): Completable {
