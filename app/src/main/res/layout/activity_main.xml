@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.MainActivity">
+
+    <include
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_main" />
+
+    <FrameLayout
+            android:id="@+id/container"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"/>
+
+    <FrameLayout
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="bottom|center_horizontal"/>
+    </FrameLayout>
+
+    <include
+            android:id="@+id/containerError"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            layout="@layout/content_error"
+            android:visibility="gone"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@drawable/selector_navigation"
+            app:itemTextColor="@drawable/selector_navigation"
+            app:itemTextAppearanceActive="@style/App.BottomNavigationView"
+            app:itemTextAppearanceInactive="@style/App.BottomNavigationView"
+            app:labelVisibilityMode="labeled"
+
+            android:layout_gravity="bottom"/>
+
+</LinearLayout>

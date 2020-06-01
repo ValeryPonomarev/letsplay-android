@@ -1,0 +1,35 @@
+<configuration>
+  <appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">
+    <tagEncoder>
+      <pattern>%logger{12}</pattern>
+    </tagEncoder>
+    <encoder>
+      <pattern>[%-20thread] %msg</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${DATA_DIR}/app.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${DATA_DIR}/logfile.%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+      <fileNamePattern>${DATA_DIR}/log.%d.%i.txt</fileNamePattern>
+      <maxFileSize>10MB</maxFileSize>
+      <maxHistory>3</maxHistory>
+      <totalSizeCap>30MB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d %logger{15} - %message%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="logcat" />
+  </root>
+
+  <logger name="filelog" level="DEBUG" additivity='false'>
+    <appender-ref ref="FILE"/>
+  </logger>
+  <logger name="logcat" level="DEBUG"/>
+
+</configuration>

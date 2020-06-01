@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#30000000</color>
+
+    <color name="colorAccent">#F3410F</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorRed">#F3410F</color>
+    <color name="colorBlue">#009fe5</color>
+    <color name="colorBlack">#424242</color>
+
+
+    <color name="colorGreen">#43a047</color>
+    <color name="colorBackground">#f7f7f7</color>
+    <color name="colorDivider">#ebebeb</color>
+    <color name="colorGray">#757575</color>
+
+    <color name="colorTextDark">#161616</color>
+    <color name="colorTextLight">#fff</color>
+    <color name="colorTextGrey">#636363</color>
+    <color name="colorTextHint">#848484</color>
+    <color name="colorTextGreyLight">#939393</color>
+    <color name="colorTextGreyLightLogin">#cacaca</color>
+    <color name="colorRectBorder">#d9d9da</color>
+    <color name="colorRectGreyBg">#ececec</color>
+    <color name="colorPrimaryDisable">#afe0842b</color>
+    <color name="colorButtonBase">#3162ea</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorEditTextBackground">#dfefeeee</color>
+    <!--<color name="colorBackground">#ccededed</color>-->
+    <color name="colorOverlay">#f7f7f7</color>
+    <color name="colorTextItemDescription">#9f9f9f</color>
+</resources>

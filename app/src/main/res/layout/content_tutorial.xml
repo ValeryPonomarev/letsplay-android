@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.tutorial.TutorialActivity"
+        tools:showIn="@layout/fragment_tutorial">
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/tutorialViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_base"
+            app:piv_animationType="color"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_selectedColor="@color/colorAccent"
+            app:piv_unselectedColor="@color/colorTextGreyLightLogin"
+            app:piv_viewPager="@id/tutorialViewPager"
+            app:piv_padding="12dp" />
+
+    <Button
+            android:id="@+id/nextButton"
+            style="@style/App.Button.Standard.Light"
+            android:layout_marginBottom="@dimen/margin_base"
+            android:layout_width="112dp"
+            android:layout_gravity="center"
+            android:text="@string/tutorial_help_next_button"/>
+    <Button
+            android:id="@+id/startButton"
+            style="@style/App.Button.Standard.Dark"
+            android:layout_marginBottom="@dimen/margin_base"
+            android:layout_width="112dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:text="@string/tutorial_help_start_button"/>
+
+</LinearLayout>

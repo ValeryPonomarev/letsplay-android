@@ -1,0 +1,34 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--base-->
+    <dimen name="margin_huge">32dp</dimen>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="margin_base">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="padding_base">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_very_small">4dp</dimen>
+
+    <dimen name="font_size_huge">17sp</dimen>
+    <dimen name="font_size">12sp</dimen>
+    <dimen name="font_size_small">10sp</dimen>
+    <dimen name="font_size_very_small">8sp</dimen>
+
+
+    <dimen name="button_height">36dp</dimen>
+    <dimen name="button_small_height">30dp</dimen>
+
+<!--//TODO-->
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="font_size_medium">12sp</dimen>
+
+    <!--legacy-->
+    <dimen name="default_edit_text_background_padding_top">1dp</dimen>
+    <dimen name="default_edit_text_background_padding_bottom">15dp</dimen>
+    <dimen name="loader_size">53dp</dimen>
+    <dimen name="recycleview_bottom_offset">50dp</dimen>
+    <dimen name="recycleview_bottom_offset_big">100dp</dimen>
+</resources>

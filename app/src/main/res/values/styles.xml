@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="App" />
+
+    <style name="App.BottomNavigationView">
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="App.Toolbar" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?android:attr/colorPrimary</item>
+    </style>
+
+    <style name="App.Text" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="App.Text.Title" parent="App.Text">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_size_huge</item>
+    </style>
+
+    <style name="App.Text.Subtitle1" parent="App.Text">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textSize">@dimen/font_size</item>
+    </style>
+
+    <style name="App.Text.Subtitle2" parent="App.Text">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textSize">@dimen/font_size_very_small</item>
+    </style>
+
+    <style name="App.Text.Body1" parent="App.Text">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_size</item>
+    </style>
+
+    <style name="App.Divider">
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+    </style>
+
+    <style name="App.IndexLabel" parent="App.Text">
+
+    </style>
+
+    <style name="App.Block">
+        <item name="android:background">@drawable/background_light_block</item>
+    </style>
+
+    <style name="App.Container" parent="App.Block">
+        <item name="android:layout_margin">@dimen/margin_base</item>
+        <item name="android:padding">@dimen/padding_base</item>
+    </style>
+
+    <style name="App.Button" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/font_size</item>
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:letterSpacing">0.095</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <style name="App.Button.Standard" parent="App.Button">
+        <item name="android:background">@drawable/selector_primary_button_enable</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="App.Button.Standard.Light" parent="App.Button.Standard">
+        <item name="android:background">@drawable/selector_primary_button_selected</item>
+        <item name="android:textColor">@color/colorTextDark</item>
+    </style>
+
+    <style name="App.Button.Standard.Dark" parent="App.Button.Standard">
+        <item name="android:background">@drawable/selector_primary_button_enable</item>
+        <item name="android:textColor">@color/colorTextLight</item>
+    </style>
+
+    <style name="App.Button.Standard.Green" parent="App.Button.Standard">
+        <item name="android:background">@drawable/selector_primary_button_green</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="App.Button.Standard.Red" parent="App.Button.Standard">
+        <item name="android:background">@drawable/selector_primary_button_red</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+</resources>

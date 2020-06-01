@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> <!--Used for cbx check problem-->
+<!--layer-list needed for paddings-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Initial state-->
+    <item android:drawable="@drawable/ic_baseline_check_box_outline_blank_24px"
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp"/>
+
+    <!--Paddings to look similar to default Android checkboxes-->
+    <item
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+
+        <selector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:enterFadeDuration="@android:integer/config_shortAnimTime"
+            android:exitFadeDuration="@android:integer/config_shortAnimTime"> <!--Used for animation-->
+
+            <item android:state_checked="true" android:drawable="@drawable/ic_baseline_check_box_24px"/>
+
+            <item android:state_checked="false" android:drawable="@drawable/ic_baseline_check_box_outline_blank_24px"/>
+
+        </selector>
+    </item>
+</layer-list>
